@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-12" style="text-align: center">
+    DASHBOARD
+  </div>
+</div>
+<div class="row">
+  <div class="col-3 offset-2">
+    <div class="card text-white bg-info">
+      <div class="card-body">
+        <h5 class="card-title">Employee: {{ employees.length }}</h5>
+      </div>
+      <div class="card-footer">
+        <a style="color: white" routerLink="/employee">View details</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-3 offset-2">
+    <div class="card text-white bg-info">
+      <div class="card-body">
+        <h5 class="card-title">Bills: {{ bills.length }}</h5>
+      </div>
+      <div class="card-footer">
+        <a style="color: white" routerLink="/bill">View details</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- 
+<button (click)="showModal()" class="btn btn-primary btn-lg">Show Modal Window</button>
+<app-modal [showCounter]="modalCounter"></app-modal>
+ -->

@@ -1,0 +1,33 @@
+<h1>{{ title }}</h1>
+<div class="container-fluid">
+  <table class="table table-info table-striped">
+    <thead>
+      <tr class="row">
+        <th>Name</th>
+        <th>Age</th>
+        <th>Active</th>
+        <th>Company</th>
+        <th>Balance</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Registered</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees" class="input-group row">
+        <td><input type="text" [(ngModel)]="employee.name.first + ' ' + employee.name.last"></td>
+        <td><input type="text" [(ngModel)]="employee.age"></td>
+        <td>
+          <input type="checkbox" [(ngModel)]="employee.isActive" ng-checked="isActive==true" id="isActive" disabled>
+        </td>
+        <td><input type="text" [(ngModel)]="employee.company"></td>
+        <td><input type="text" [(ngModel)]="employee.balance"></td>
+        <td><input type="text" [(ngModel)]="employee.email"></td>
+        <td><input type="text" [(ngModel)]="employee.phone"></td>
+        <td><input type="text" [(ngModel)]="employee.address"></td>
+        <td><input type="text" [(ngModel)]="employee.registered"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

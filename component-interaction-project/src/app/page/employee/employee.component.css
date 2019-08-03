@@ -1,0 +1,109 @@
+input {
+  border: 0;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 6px;
+  font-size: 10pt;
+}
+
+.input-group>td:first-child>input {
+    width: 10vw;
+}
+
+.input-group>td:nth-child(2)>input {
+    width: 3vw;
+}
+
+
+.input-group>td:nth-child(3)>input {
+    width: 3vw;
+  position: relative;
+  top: 5px;
+  height: 20px;
+}
+
+.input-group>td:nth-child(4)>input {
+    width: 6vw;
+}
+
+.input-group>td:nth-child(5)>input {
+    width: 5vw;
+}
+
+.input-group>td:nth-child(6)>input {
+    width: 13vw;
+}
+
+.input-group>td:nth-child(7)>input {
+    width: 9vw;
+}
+
+.input-group>td:nth-child(8)>input {
+    width: 23vw;
+}
+
+.input-group>td:nth-child(9)>input {
+    width: 16vw;
+}
+
+table {
+    padding: 0;
+    margin: 0;
+}
+
+tr {
+    padding: 0;
+    margin: 5px 0;
+}
+
+td {
+    padding: 0;
+    margin: 0;
+}
+
+th {
+    margin: 6px;
+    border: 0;
+}
+
+.row {
+    justify-content: center;
+}
+
+.row>th:first-child {
+    width: 10vw;
+}
+
+.row>th:nth-child(2){
+    width: 3vw;
+}
+
+
+.row>th:nth-child(3) {
+    width: 3vw;
+}
+
+.row>th:nth-child(4){
+    width: 6vw;
+}
+
+.row>th:nth-child(5){
+    width: 5vw;
+}
+
+.row>th:nth-child(6){
+    width: 13vw;
+}
+
+.row>th:nth-child(7){
+    width: 9vw;
+}
+
+.row>th:nth-child(8){
+    width: 23vw;
+}
+
+.row>th:nth-child(9){
+    width: 16vw;
+}
+
