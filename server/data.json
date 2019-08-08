@@ -1,0 +1,70 @@
+{
+  "film": [
+    {
+      "id": 1,
+      "title": "Edge of Tomorrow",
+      "release": 2014,
+      "actor": "Tom Cruise"
+    },
+    {
+      "id": 2,
+      "title": "Sound of Music",
+      "release": 1965,
+      "actor": "Julie Andrews"
+    },
+    {
+      "id": 3,
+      "title": "Ben Hur",
+      "release": 1959,
+      "actor": "Charlton Heston"
+    },
+    {
+      "id": 4,
+      "title": "Guardians of the Galaxy",
+      "release": 2014,
+      "actor": "Chris Pratt"
+    },
+    {
+      "id": 5,
+      "title": "Pride and Prejudice",
+      "release": 1995,
+      "actor": "Jennifer Ehle"
+    },
+    {
+      "id": 6,
+      "title": "Pulp Fiction",
+      "release": 1994,
+      "actor": "John Travolta"
+    },
+    {
+      "id": 7,
+      "title": "Kill Bill",
+      "release": 2003,
+      "actor": "Uma Thurman"
+    },
+    {
+      "title": "Kincsem",
+      "release": 2017,
+      "actor": "Nagy Ervin",
+      "id": 8
+    },
+    {
+      "title": "Testről és Lélekről",
+      "release": 2018,
+      "actor": "Borbély Alexandra",
+      "id": 9
+    },
+    {
+      "title": "Ruben Brandt, a gyűjtő",
+      "release": 2018,
+      "actor": "Iván Kamarás",
+      "id": 10
+    },
+    {
+      "title": "Indul a bakterház",
+      "release": 1983,
+      "actor": "Olvasztó Imre",
+      "id": 11
+    }
+  ]
+}
