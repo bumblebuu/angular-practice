@@ -26,11 +26,7 @@ export class UserEditComponent implements OnInit {
 
   onSubmit(ev: Event): void {
     ev.preventDefault();
-<<<<<<< HEAD
     console.log("Itt hívom meg a service update metódusát!", this.user);
-=======
-    console.log('Itt hívom meg a service update metódusát!', this.user);
->>>>>>> 9aa147adbece7d8b56c3fd7cd010ab139509060b
   }
 
 }
