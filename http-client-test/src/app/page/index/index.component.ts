@@ -73,10 +73,12 @@ export class IndexComponent implements OnInit {
     let bal = 0;
 
     for (let i = 0; i < users.length; i++) {
-      bal += parseFloat(users[i].balance
-        .replace(regex, '')
-        .replace(',', ''));
-      this.balance = bal.toFixed(2);
+      if (users[i].balance != null) {
+        bal += parseFloat(users[i].balance
+          .replace(regex, '')
+          .replace(',', ''));
+        this.balance = bal.toFixed(2);
+      }
     }
     return this.balance;
   }

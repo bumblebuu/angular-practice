@@ -1,0 +1,12 @@
+table tr:hover {
+  color: #17b697;
+}
+
+#back {
+  position: relative;
+  left: 80%;
+}
+
+#back>a {
+  color: white;
+}

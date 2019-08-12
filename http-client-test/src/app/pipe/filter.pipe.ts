@@ -15,13 +15,15 @@ export class FilterPipe implements PipeTransform {
     // })
 
     let found = [];
-    for (let i = 0; i < baseArray.length; i++) {
-      if (baseArray[i].name.last.toLowerCase().indexOf(phrase.toLowerCase()) > -1
-      || baseArray[i].name.first.toLowerCase().indexOf(phrase.toLowerCase()) > -1
-      || baseArray[i].email.toLowerCase().indexOf(phrase.toLowerCase()) > -1
-      || baseArray[i].phone.toLowerCase().indexOf(phrase.toLowerCase()) > -1
-      || baseArray[i].age == parseInt(phrase)) {
-        found.push(baseArray[i]);
+    if (baseArray != null) {
+      for (let i = 0; i < baseArray.length; i++) {
+        if (baseArray[i].name.last.toLowerCase().indexOf(phrase.toLowerCase()) > -1
+          || baseArray[i].name.first.toLowerCase().indexOf(phrase.toLowerCase()) > -1
+          || baseArray[i].email.toLowerCase().indexOf(phrase.toLowerCase()) > -1
+          || baseArray[i].phone.toLowerCase().indexOf(phrase.toLowerCase()) > -1
+          || baseArray[i].age == parseInt(phrase)) {
+          found.push(baseArray[i]);
+        }
       }
     }
     return found;

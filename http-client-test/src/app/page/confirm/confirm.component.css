@@ -1,0 +1,12 @@
+
+#confirm {
+  position: absolute;
+  top: 50vh;
+  margin-top: -50px;
+  left: 50vw;
+  margin-left: -200px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  color: #95a5a6;
+}

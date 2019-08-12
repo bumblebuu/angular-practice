@@ -6,6 +6,7 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faAt } from '@fortawesome/free-solid-svg-icons';
 import { faSortNumericDown } from '@fortawesome/free-solid-svg-icons';
 import { faIdCard } from '@fortawesome/free-solid-svg-icons';
+import { DialogService } from 'src/app/service/dialog.service';
 
 
 @Component({
@@ -27,7 +28,8 @@ export class UserTableComponent implements OnInit, OnDestroy {
   faIdCard = faIdCard;
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private dialogService: DialogService
   ) { }
 
   ngOnInit() {
@@ -41,15 +43,33 @@ export class UserTableComponent implements OnInit, OnDestroy {
   }
 
   onDelete(user: User) {
-    this.userService.remove(user.id).subscribe(
-      response => {
-        let index = this.userList.indexOf(user);
-        this.userList.splice(index, 1);
-        this.changeCounter++;
-      },
-      err => console.error(err)
-    )
+    // if (confirm('Are you sure to delete this record?')) {
+    //   this.userService.remove(user.id).subscribe(
+    //     response => {
+    //       let index = this.userList.indexOf(user);
+    //       this.userList.splice(index, 1);
+    //       this.changeCounter++;
+    //     },
+    //     err => console.error(err)
+    //   )
+    // }
+
+    this.dialogService.openConfirmDialog().afterClosed().subscribe(res => {
+      if (res) {
+        this.userService.remove(user.id).subscribe(
+          response => {
+            let index = this.userList.indexOf(user);
+            this.userList.splice(index, 1);
+            this.changeCounter++;
+          },
+          err => console.error(err)
+        )
+      }
+    });
+
   }
+
+
 
   changeOrder(param: string): void {
     if (param === this.orderKey) {

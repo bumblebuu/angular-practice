@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from './material/material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -13,6 +15,8 @@ import { UserEditComponent } from './page/user-edit/user-edit.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { OrderPipe } from './pipe/order.pipe';
 import { UserCreateComponent } from './page/user-create/user-create.component';
+import { ConfirmComponent } from './page/confirm/confirm.component';
+import { AboutComponent } from './page/about/about.component';
 
 const appRoutes: Routes = [
   {
@@ -32,6 +36,10 @@ const appRoutes: Routes = [
     component: UserCreateComponent
   },
   {
+    path: "about",
+    component: AboutComponent
+  },
+  {
     path: "**",
     component: IndexComponent
   }
@@ -46,7 +54,9 @@ const appRoutes: Routes = [
     UserEditComponent,
     FilterPipe,
     OrderPipe,
-    UserCreateComponent
+    UserCreateComponent,
+    ConfirmComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -55,9 +65,12 @@ const appRoutes: Routes = [
       appRoutes
     ),
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ConfirmComponent]
 })
 export class AppModule { }
