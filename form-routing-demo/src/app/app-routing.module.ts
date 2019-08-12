@@ -6,27 +6,26 @@ import { UserEditComponent } from './page/user-edit/user-edit.component';
 
 
 const routes: Routes = [
-  {
-    path: "",
-    component: IndexComponent
-  },
-  {
-    path: "users",
-    component: UserListComponent
-  },
-  {
-    path: "users/:id",
-    component: UserEditComponent
-  },
-  {
-    path: "**",
-    component: IndexComponent
-  },
-
+    {
+        path: "",
+        component: IndexComponent
+    },
+    {
+        path: "users",
+        component: UserListComponent
+    },
+    {
+        path: "users/:id",
+        component: UserEditComponent
+    },
+    {
+        path: "**",
+        component: IndexComponent
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

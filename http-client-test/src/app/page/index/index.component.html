@@ -1,0 +1,66 @@
+<div class="row mt-5">
+  <div class="col-4 offset-1">
+    <div class="card text-white bg-primary">
+      <div class="card-header">Number of Users
+        <fa-icon [icon]="faUsers" style="float: right"></fa-icon>
+      </div>
+      <div class="card-body row">
+        <h4 class="card-title col-3">{{ all }}</h4>
+        <div class="col-3">
+          <p class="card-text">Active: {{ active }}</p>
+        </div>
+        <div class="col-4">
+          <p class="card-text">Inactive: {{ inActive }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 offset-1">
+    <div class="card text-white bg-secondary">
+      <div class="card-header">Balance of Users
+        <fa-icon [icon]="faCoins" style="float: right"></fa-icon>
+      </div>
+      <div class="card-body row">
+        <div class="col-6">
+          <h5>Sum of balances:</h5>
+        </div>
+        <div class="col-5">
+          <h4 class="card-title">$ {{ balance }}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-3">
+        <div class="card text-white bg-dark">
+          <div class="card-header">Apple
+            <img src="https://img.icons8.com/ios/48/000000/apple.png" style="float: right">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"> people who like that: {{ apple }}</h5>
+          </div>
+        </div>
+      </div>
+    <div class="col-3 offset-1">
+      <div class="card text-white bg-danger">
+        <div class="card-header">Strawberry
+          <img src="https://img.icons8.com/ios/48/000000/strawberry.png" style="float: right">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"> people who like that: {{ strawberry }}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-3 offset-1">
+      <div class="card text-white bg-warning">
+        <div class="card-header">Banana
+          <img src="https://img.icons8.com/ios/48/000000/banana.png" style="float: right">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"> people who like that: {{ banana }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>

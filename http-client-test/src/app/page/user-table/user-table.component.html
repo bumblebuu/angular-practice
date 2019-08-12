@@ -1,0 +1,68 @@
+<!-- <div class="alert alert-dismissible alert-warning" style="">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <div class="row">
+   <div class="col-8"><h4 class="alert-heading">Warning! You sure about this?</h4></div>
+    <div class="col-4 btn-group">
+      <button class="btn btn-light mr-1" (click)="onDelete(user)">YES</button>
+      <button class="btn btn-dark" (click)="">NO</button>
+    </div>
+  </div>
+</div> -->
+
+<div class="row mt-5">
+  <div class="col-6 offset-1">
+    <label for="search">Looking for someone?</label>
+    <input id="search" type="text" class="form-control" placeholder="Search..." [(ngModel)]="filterPhrase">
+  </div>
+  <div class="col-3 offset-1">
+    <label for="search">Want to join?</label>
+    <button class="btn btn-success btn-block" routerLink="/newuser">ADD NEW USER</button>
+  </div>
+</div>
+<div class="row mt-5">
+  <div class="col-10 offset-1">
+    <table class="table table-dark table-hover">
+      <thead>
+        <tr>
+          <th (click)="changeOrder('id')"><b>#</b></th>
+          <th (click)="changeOrder('name')">
+            <fa-icon [icon]="faIdCard" class="pr-2"></fa-icon>
+            Name
+          </th>
+          <th>Active</th>
+          <th (click)="changeOrder('age')">
+            <fa-icon [icon]="faSortNumericDown"></fa-icon>
+            Age
+          </th>
+          <th (click)="changeOrder('email')">
+            <fa-icon [icon]="faAt" class="pr-2"></fa-icon>
+            Email
+          </th>
+          <th (click)="changeOrder('phone')">
+            <fa-icon [icon]="faPhone" class="pr-2"></fa-icon>
+            Phone
+          </th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr
+          *ngFor="let user of userList | filter:filterPhrase:changeCounter | order:orderKey:orderDirection:changeCounter">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name.last }} {{ user.name.first }}</td>
+          <td><input type="checkbox" [(ngModel)]="user.isActive"></td>
+          <td>{{ user.age }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td>
+            <div class="button-group">
+              <button class="btn btn-primary mr-2" routerLink="/users/{{ user.id }}">UPDATE</button>
+              <button class="btn btn-warning" (click)="onDelete(user)">DELETE</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
