@@ -1,0 +1,25 @@
+[{
+    "firstname": "Grosics",
+    "lastname": "Rebeka",
+    "email": "grosics13@gmail.com",
+    "password": "bum",
+    "check": "on"
+}, {
+    "firstname": "Huba",
+    "lastname": "Buba",
+    "email": "hubabuba@gmail.com",
+    "password": "hubibubi",
+    "check": "on"
+}, {
+    "firstname": "Pál",
+    "lastname": "Sára",
+    "email": "palsara@gmail.com",
+    "password": "ajandek",
+    "check": "on"
+}, {
+    "firstname": "Valami",
+    "lastname": "Van",
+    "email": "alevegoben@gmail.com",
+    "password": "valamiami",
+    "check": "on"
+}]
