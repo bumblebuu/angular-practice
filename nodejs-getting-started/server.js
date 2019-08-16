@@ -33,11 +33,6 @@ class PostHandler {
 }
 
 class GetHandler {
-<<<<<<< HEAD
-  constructor(req, res) {
-    const fileName = req.url == '/' ? '/index.html' : `${req.url}.html`;
-    const filePath = `./view${fileName}`;
-=======
     constructor(req, res) {
         let fileName = req.url == '/' ? '/index.html' : `${req.url}.html`;
         let filePath = `./view${fileName}`;
@@ -52,7 +47,6 @@ class GetHandler {
             console.timeEnd('filereadtime');
             res.end(fileContent);
         });
->>>>>>> 529c9b36231410cefc02f045dbbbec8c2364e376
 
     console.time('filereadtime');
     console.time('testtime');
