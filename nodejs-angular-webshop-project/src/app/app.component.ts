@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'nodejs-angular-webshop-project';
+
+  opacity: number = 1;
+  @HostListener('window:scroll', ['$event'])
+  scrollHandler($event): void {
+    if ($event.currentTarget.pageYOffset > 100) {
+      this.opacity = 0.5;
+    } else {
+      this.opacity = 1;
+    }
+  }
 }
