@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-[{
-  "id": 1,
-  "name": "Emeletes ágy",
-  "insDate": "2019-08-16",
-  "description": "Szuper emeletes ágy, akár két mókus méretű gyereknek.",
-  "color": "red"
-}]
-=======
 [
   {
     "id": 1,
@@ -16,4 +7,3 @@
     "color": "red"
   }
 ]
->>>>>>> 8c53cdeae1bbb2d4a0a0bff324a453d3c632d8cc
