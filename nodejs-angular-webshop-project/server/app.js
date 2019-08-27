@@ -9,9 +9,9 @@ const server = http.createServer( (req, res) => {
 
   switch( req.method.toLowerCase() ) {
     case 'get': new GetHandler(req, res);
-    break;
+      break;
     case 'post': new PostHandler(req, res);
-    break;
+      break;
     default: res.end('Invalid method');
   }
 });
