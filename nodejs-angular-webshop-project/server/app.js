@@ -7,7 +7,7 @@ const PutHandler = require('./module/putHandler');
 
 const server = http.createServer( (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Methods", "POST, PUT, DELETE, GET, OPTIONS");
 
   switch( req.method.toLowerCase() ) {
     case 'get': new GetHandler(req, res);

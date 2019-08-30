@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { OrderService } from './service/order.service';
 
 @Component({
   selector: 'app-root',
@@ -19,13 +20,11 @@ export class AppComponent {
 
   title = 'nodejs-angular-webshop-project';
 
-  opacity: number = 1;
-  @HostListener('window:scroll', ['$event'])
-  scrollHandler($event): void {
-    if ($event.currentTarget.pageYOffset > 100) {
-      this.opacity = 0.5;
-    } else {
-      this.opacity = 1;
-    }
+  constructor(
+    private orderService: OrderService
+  ) {
+    this.orderService.getAll().subscribe(
+      data => console.log(data)
+    )
   }
 }
