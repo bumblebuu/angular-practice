@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .jumbotron.mt-5
+    h1.display-4 Welcome to #{title}!
+    p.lead
+      | This is our grocery store with many kind of products, satisfying a wide variety of needs.
+    hr.my-4
+    p
+      | If you are underage, our alcoholic bevarages can not be bought by you without a guardian.
+    a.btn.btn-info.btn-lg(href='/products' role='button') Our products
+    

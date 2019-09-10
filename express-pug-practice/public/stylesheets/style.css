@@ -1,8 +1,31 @@
 body {
-  padding: 50px;
+  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url(http://wallperio.com/data/out/25/black-abstract-wallpaper_594927546.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 a {
   color: #00B7FF;
+}
+
+.aboutButtons {
+  margin-top: 50px;
+}
+
+.aboutButtons a {
+  padding: 10px;
+  border: 1px solid;
+  width: 120px;
+}
+
+.aboutButtons a:hover {
+  color: rgb(58, 174, 209);
+  text-decoration: none;
+}
+
+.about {
+  margin-top: 200px;
 }

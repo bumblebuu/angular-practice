@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .row
+    .col-8.offset-2.mt-5
+      form
+        h2.text-light Write to us
+          .form-group.mt-3
+            label
+              h4 Email
+            input.form-control(type='email', placeholder='Enter your email address...')
+          .form-group.mt-3
+            label
+              h4 Content
+            input.form-control(type='text', placeholder='Content about...')
+          .form-group.mt-3
+            label
+              h4 Question
+            textarea.form-control(type='text', placeholder='Enter your question...', rows="4")
