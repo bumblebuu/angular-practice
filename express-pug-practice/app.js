@@ -1,15 +1,15 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var productsRouter = require('./routes/products');
-var aboutRouter = require('./routes/about');
-var contactRouter = require('./routes/contact');
+let indexRouter = require('./routes/index');
+let productsRouter = require('./routes/products');
+let aboutRouter = require('./routes/about');
+let contactRouter = require('./routes/contact');
 
-var app = express();
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -17,23 +17,32 @@ app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+  extended: false,
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+//   next();
+// });
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/about', require('./routes/about'));
 app.use('/contact', require('./routes/contact'));
 app.use('/products', require('./routes/products'));
 
+
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

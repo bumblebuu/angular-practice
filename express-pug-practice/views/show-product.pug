@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h2.text-light Edit product
+  form.form.text-light(action=`/products/${product.id}`, method="post")
+    .form-group
+      label Name
+      input.form-control(name="name", value= product.name)
+    .form-group
+      label Manufacturer
+      input.form-control(name="manufacturer", value= product.manufacturer)
+    .form-group
+      label Price
+      input.form-control(name="price", value= product.price)
+    .form-group
+      label Stock
+      input.form-control(name="stock", value= product.stock)
+    button.btn.btn-primary(type="submit") Save

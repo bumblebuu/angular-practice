@@ -11,5 +11,6 @@ block content
             h6.card-text Manufacturer: #{product.manufacturer}
             h6.card-text In stock: #{product.stock}
             h6.card-text Contact: #{product.contact}
-          .card-footer.border-info
-            a.btn.btn-info.btn-block Show
+          .card-footer.border-info.btn-group
+            a.btn.btn-info(href=`/products/${product.id}`) Show
+            a.btn.btn-warning.text-light(href=`/products/delete/${product.id}`, method="delete") Delete
