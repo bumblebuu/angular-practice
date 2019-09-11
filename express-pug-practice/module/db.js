@@ -59,16 +59,12 @@ module.exports = class DB {
             products p JOIN manufacturers m ON p.manufacturer = m.id 
         `;
 
-    const result = await this.conn.query(sql);
-    return result;
-  }
+    if (id) {
+      sql += ` WHERE p.id = ${id}`;
+    }
 
-  async readOne(id) {
-    const sql = `
-        SELECT *
-        FROM products 
-        WHERE id = ${id}
-        `;
+    let result = await this.conn.query(sql);
+    return result;
 
     const result = await this.conn.query(sql);
     return result;
@@ -82,29 +78,31 @@ module.exports = class DB {
         ('${data.name}', ${data.manufacturer}, ${data.price}, ${data.stock}, 1)
         `;
 
-    const result = await this.conn.query(sql);
-    return result;
-  }
-
-  async update(id, data) {
-    const sql = `
-        UPDATE products
-            SET name = '${data.name}', manufacturer = ${data.manufacturer}, price = ${data.price}, stock = ${data.stock}, active = 1
-            WHERE id = ${id}
-    `;
-
-    const result = await this.conn.query(sql);
+    let result = await this.conn.query(sql);
     return result;
   }
 
   async delete(id) {
-    const sql = `
-        DELETE FROM products
-            WHERE id = ${id}
+    let sql = `
+            DELETE FROM products WHERE id = ${id}
         `;
-
-    const result = await this.conn.query(sql);
+    let result = await this.conn.query(sql);
     return result;
   }
 
+  async update(product) {
+    let sql =
+      `
+        UPDATE products 
+        SET 
+            name = '${product.name}', 
+            manufacturer = ${product.manufacturer}, 
+            price = ${product.price}, 
+            stock = ${product.stock},
+            active = ${product.active}
+        WHERE id = ${product.id}
+        `;
+    let result = await this.conn.query(sql);
+    return result;
+  }
 };

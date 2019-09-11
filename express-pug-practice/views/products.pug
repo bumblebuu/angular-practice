@@ -12,5 +12,8 @@ block content
             h6.card-text In stock: #{product.stock}
             h6.card-text Contact: #{product.contact}
           .card-footer.border-info.btn-group
+            - let url = `/products/delete/${product.id}`;
+            - let updateUrl = `/products/update/${product.id}`;
             a.btn.btn-info(href=`/products/${product.id}`) Show
-            a.btn.btn-warning.text-light(href=`/products/delete/${product.id}`, method="delete") Delete
+            a.btn.btn-secondary(href=updateUrl) Update
+            a.btn.btn-warning.text-light(href=url, method="delete") Delete

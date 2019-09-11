@@ -19,7 +19,6 @@ router.get('/', async (req, res, next) => {
 
 
 // Create new product.
-
 router.get('/new', async (req, res, next) => {
   res.render('new-product');
 });
@@ -29,31 +28,27 @@ router.post('/', async (req, res, next) => {
   res.redirect('/products');
 });
 
-// Delete
-
-router.get('/delete/:id', async (req, res, next) => {
-  const id = req.params.id;
-
-  await db.delete(parseInt(id));
-  res.redirect('/products');
-});
 
 // Update
-
-router.get('/:id', async (req, res, next) => {
-  const id = req.params.id || 0;
-
-  const prod = await db.readOne(id);
-
-  res.render('show-product', {
-    product: prod[0],
+router.get('/update/:id', async (req, res, next) => {
+  const selectedProduct = await db.read(req.params.id);
+  
+  res.render('update-product', {
+    product: selectedProduct[0],
   });
 });
 
-router.post('/:id', async (req, res, next) => {
-  const id = req.params.id || 0;
-  await db.update(id, req.body);
-  res.redirect('/products');
+
+router.post('/update', async (req, res, next) => {
+  const result = await db.update(req.body);
+  res.json(result);
+});
+
+
+// Delete
+router.get('/delete/:id', async (req, res, next) => {
+  const result = await db.delete(req.params.id);
+  res.json(result);
 });
 
 
